@@ -75,20 +75,14 @@ int	ft_printf(const char *str, ...)
 	va_list	args;
 	int		n;
 	int		len;
-	
+
 	len = 0;
 	n = 0;
 	va_start(args, str);
 	while (str[n])
 	{
-		if (str[n] == '%')
+		if (str[n] == '%' && g_dispatchtable[str[n + 1]])
 		{
-			if (g_dispatchtable[str[n + 1]] == NULL)
-			{
-				len += write(1, &str[n], 2);
-				n = n + 2;
-				continue ;
-			}
 			len += g_dispatchtable[str[n + 1]](args);
 			n++;
 		}
@@ -103,7 +97,8 @@ int	ft_printf(const char *str, ...)
 int main()
 {
 	// printf("%s%HHHHHH", "123");
-	ft_printf("%HHHHHH%s", "123");
+	int n = ft_printf("%s%%%HHHHHH", "123");
+	printf("\n%d", n);
 	return (0);
 }
 
