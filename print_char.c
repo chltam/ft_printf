@@ -12,12 +12,6 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-int	ft_putchar_len(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
-
 int	ft_putstr_len(char *str)
 {
 	int	count;
@@ -67,6 +61,7 @@ int ft_format_string(va_list arg)
 
 int	ft_format_percent(va_list arg)
 {
+	arg = arg;
 	write(1, "%", 1);
 	return (1);
 }

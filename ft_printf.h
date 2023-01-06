@@ -24,6 +24,10 @@ int	ft_format_char(va_list arg);
 int	ft_putstr_len(char *str);
 int	ft_putchar_len(char c);
 int	ft_format_percent(va_list arg);
+int	ft_format_unsigned(va_list arg);
+int	ft_format_hex_lowercase(va_list arg);
+int	ft_format_hex_uppercase(va_list arg);
+int	ft_format_pointer(va_list arg);
 
 
 #endif

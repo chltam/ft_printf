@@ -11,16 +11,20 @@
 # **************************************************************************** #
 NAME := libftprintf.a
 FLAGS := -Werror -Wextra -Wall
-files := *.c
+SCRS := ft_printf \
+		print_char \
+		print_number \
+		print_hex
+
 
 $(NAME):
-		gcc $(FLAGS) -c $(files)
-		ar -rcs $(NAME) *.o
+		gcc $(FLAGS) -c $(SCRS:%=%.c)
+		ar -rcs $(NAME) $(SRCS:%=%.o)
 
 all: $(NAME)
 clean:
-	rm -f *.o
+	rm -f $(SRCS:%=%.o)
 fclean:
-	rm -f *.o
-	rm -f libftprintf.a
+	rm -f $(SRCS:%=%.o)
+	rm -f $(NAME)
 re: fclean all

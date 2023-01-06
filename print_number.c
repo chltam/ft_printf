@@ -38,12 +38,12 @@ int	ft_us_digitcount(unsigned int number)
 	return (count);
 }
 
-int	ft_formal_unsigned(va_list arg)
+int	ft_format_unsigned(va_list arg)
 {
-	unsigned int		number;
-	int		count;
-	char	*str;
-	int		len;
+	unsigned int	number;
+	int				count;
+	char			*str;
+	int				len;
 
 	number = va_arg(arg, unsigned int);
 	count = ft_us_digitcount(number);
