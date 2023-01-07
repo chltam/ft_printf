@@ -11,16 +11,6 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 #include "./libft/libft.h"
-#include <stdio.h>
-
-// int ft_format_char(va_list arg);
-// int ft_format_decimal(va_list arg);
-// int ft_format_string(va_list arg);
-// int	ft_format_hex_lowercase(va_list arg);
-// int	ft_format_hex_uppercase(va_list arg);
-// int	ft_format_pointer(va_list arg);
-
-// typedef int	(*t_format)(va_list);
 
 static const t_format	g_dispatchtable[] = {
 ['c'] = ft_format_char,
@@ -33,7 +23,6 @@ static const t_format	g_dispatchtable[] = {
 ['X'] = ft_format_hex_uppercase,
 ['%'] = ft_format_percent
 };
-
 
 int	ft_printf(const char *str, ...)
 {
@@ -58,13 +47,3 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (len);
 }
-
-// int main()
-// {
-// 	int *i = 0;
-
-// 	printf("%p\n", i);
-// 	int n = ft_printf("%p", i);
-// 	printf("\n%d\n", n);
-// 	return (0);
-// }

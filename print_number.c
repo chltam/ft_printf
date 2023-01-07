@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_format_decimal(va_list arg)
 {
@@ -30,7 +29,7 @@ int	ft_us_digitcount(unsigned int number)
 	int	count;
 
 	count = 1;
-	while(number >= 10)
+	while (number >= 10)
 	{
 		number = number / 10;
 		count++;
@@ -50,7 +49,7 @@ int	ft_format_unsigned(va_list arg)
 	str = malloc(sizeof(str) * (count + 1));
 	str[count] = 0;
 	count--;
-	while(count >= 0)
+	while (count >= 0)
 	{
 		str[count] = (number % 10) + 48;
 		number /= 10;

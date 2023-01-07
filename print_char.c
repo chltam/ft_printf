@@ -30,7 +30,7 @@ int	ft_putstr_len(char *str)
 	return (count);
 }
 
-int ft_format_char(va_list arg)
+int	ft_format_char(va_list arg)
 {
 	char	c;
 
@@ -39,12 +39,12 @@ int ft_format_char(va_list arg)
 	return (1);
 }
 
-int ft_format_string(va_list arg)
+int	ft_format_string(va_list arg)
 {
 	char	*str;
 	int		count;
 
-	str = va_arg(arg, char*);
+	str = va_arg(arg, char *);
 	count = 0;
 	if (str == NULL)
 	{
@@ -61,7 +61,7 @@ int ft_format_string(va_list arg)
 
 int	ft_format_percent(va_list arg)
 {
-	arg = arg;
+	(void)arg;
 	write(1, "%", 1);
 	return (1);
 }
