@@ -76,6 +76,18 @@ int main()
 	printf("\n");
 	printf("\033[93mreturn value: %d\n\n\033[0m", n);
 
+	//int negative
+	printf("\033[32mprintf int negative: \033[0m");
+	n = printf("%i", -2456);
+	printf("\n");
+	printf("\033[32mreturn value: %d\n\033[0m", n);
+	fflush(stdout);
+	printf("\033[93mft_printf int negative: \033[0m");
+	fflush(stdout);
+	n = ft_printf("%i", -2456);
+	printf("\n");
+	printf("\033[93mreturn value: %d\n\n\033[0m", n);
+
 	//unsigned
 	printf("\033[32mprintf unsigned int: \033[0m");
 	n = printf("%u", -1);
