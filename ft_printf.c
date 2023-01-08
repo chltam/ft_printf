@@ -32,6 +32,8 @@ int	ft_printf(const char *str, ...)
 
 	len = 0;
 	n = 0;
+	if (!str)
+		return (-1);
 	va_start(args, str);
 	while (str[n])
 	{

@@ -10,21 +10,26 @@
 #                                                                              #
 # **************************************************************************** #
 NAME := libftprintf.a
-FLAGS := -Werror -Wextra -Wall
-files := ft_printf \
-		print_char \
-		print_number \
-		print_hex
-
-$(NAME): $(SCRS:%=%.c)
-		cp ./libft/libft.a libftprintf.a
-		cc $(FLAGS) -c $(files:%=%.c)
-		ar -rcs $(NAME) $(files:%=%.o)
+CC := cc
+CFLAGS := -Werror -Wextra -Wall
+SRCS := ft_printf.c \
+		print_char.c \
+		print_number.c \
+		print_hex.c
+OBJS := $(SRCS:.c=.o)
+$(NAME): $(OBJS)
+		@echo "\033[0;92mMaking libft.a...\033[0;39m"
+		make -C libft
+		@echo "\033[0;92mCopying libft.a to the current directory and rename it libftprintf.a\033[0;39m"
+		cp ./libft/libft.a $(NAME)
+		@echo "\033[0;92mAdding extra object file into the libftprintf library\033[0;39m"
+		ar -rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 clean:
-	rm -f $(files:%=%.o)
+	rm -f $(OBJS)
 fclean:
-	rm -f $(files:%=%.o)
+	rm -f ./libft/libft.a ./libft/*.o
+	rm -f $(OBJS)
 	rm -f $(NAME)
 re: fclean all

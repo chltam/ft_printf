@@ -47,6 +47,8 @@ int	ft_format_unsigned(va_list arg)
 	number = va_arg(arg, unsigned int);
 	count = ft_us_digitcount(number);
 	str = malloc(sizeof(str) * (count + 1));
+	if (!str)
+		return (0);
 	str[count] = 0;
 	count--;
 	while (count >= 0)
