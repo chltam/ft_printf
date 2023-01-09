@@ -221,12 +221,12 @@ int main()
 	printf("\033[93mreturn value: %d\n\n\033[0m", n);
 
 	//overflow pointer
-	printf("\033[32mprintf hex 2147483648: \033[0m");
+	printf("\033[32mprintf hex 18446744073709551615: \033[0m");
 	n = printf("%p", 18446744073709551615);
 	printf("\n");
 	printf("\033[32mreturn value: %d\n\033[0m", n);
 	fflush(stdout);
-	printf("\033[93mft_printf hex 2147483648: \033[0m");
+	printf("\033[93mft_printf hex 18446744073709551615: \033[0m");
 	fflush(stdout);
 	n = ft_printf("%p", 18446744073709551615);
 	printf("\n");

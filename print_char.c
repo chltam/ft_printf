@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_putstr_len(char *str)
 {
